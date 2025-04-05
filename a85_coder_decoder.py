@@ -23,12 +23,6 @@ def encode_ascii85(string):
         for j in range(4):
             st += hexes[i + j][2:]
         bytes5.append(st)
-
-    pos = 0  # position at which zeros start to appear
-    for i in range(len(bytes5[-1]) - 1):
-        if bytes5[-1][i] + bytes5[-1][i + 1] == '00':
-            pos = i 
-            break
     
     res = []
     for byte in bytes5:
@@ -37,7 +31,7 @@ def encode_ascii85(string):
         seq = [chr(digit) for digit in digits]
         res.append(seq)
 
-    return ''.join([''.join([j for j in i]) for i in res])[:(-1) * ((10 - pos) // 2)]
+    return ''.join([''.join([j for j in i]) for i in res])
 
 
 def decode_ascii85(encoded_string):
@@ -74,6 +68,6 @@ if __name__ == "__main__":
 The program is set to encoding mode by default.
 
 ### example:
-[in]  i love football
-[out] Bcq51G%De.Df9`,@;K`
+[in]  i love football!
+[out] Bcq51G%De.Df9`,@;Ka'
 '''

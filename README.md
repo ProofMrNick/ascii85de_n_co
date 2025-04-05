@@ -6,7 +6,7 @@
 The program is set to encoding mode by default.
 
 #### example:
-[in]  i love football <br>
-[out] Bcq51G%De.Df9\`,@;K\`
+[in]  i love football! <br>
+[out] Bcq51G%De.Df9`,@;Ka'
 
 (c) N. Pirogov
